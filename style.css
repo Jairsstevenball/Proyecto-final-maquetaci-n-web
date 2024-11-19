@@ -1,0 +1,296 @@
+/* .raleway-<uniquifier> { 
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } 
+
+ .kode-mono-<uniquifier> { 
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  /} */
+
+/* NORMALIZACION */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  /* Esto mantiene el ancho y el alto a pesar del padding y borde */
+    font-family: "Kode Mono", monospace;
+    list-style: none; /* Esto lo que va hacer es quitar los puntos y decoraciones de las listas */
+    text-decoration: none; /* Esto quita el subrayado de los enlaces */
+    color: white;
+}
+
+body{
+    background-color: black; /* TODO: Borrar cuando tengamos el fondo origina*/
+}
+
+header{
+    position: fixed; /*Esto hace que el header quede fijo en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 100; /*Esto hace que el header este por encima */
+    width: 100%;
+    display: flex; /*Esto hara que los elementos se ponga en liniea */
+    align-items: center; /*Centra verticalmente*/
+    justify-content: space-between; /*Hace que los elementos se separen*/
+    padding: 15px 3%;
+    background-color: transparent;
+
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 800; /*Este es el grueso de las letras*/
+}
+
+.navlist{
+    display: flex; /*Esto sirve para que los elementos de la lista se pongan en linea*/
+
+}
+
+.navlist a{
+    margin-left: 60px; /*Esto es para separar las palabras*/
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /*Este es un subrayado transparante*/
+    transition: all .5s ease; /*Esto es para animar todas las caracteristicas del navlist a*/
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;/*Este es un subrayado blanco que aparecera cuando haga hover es decir pasar el mouse por encima*/
+}
+
+#menu_icon{ 
+    display: none; /*Lo pongo en none para que solo se vea cuando la pagina este colapsada de forma horizontal */
+}
+
+
+
+#menu_icon{
+    font-size: 35px;
+    z-index: 101; /*para que este sobre el header*/
+    cursor: pointer; /*para que aparezca la manito cuando se pone el click*/
+}
+
+#menu-toggle{
+    display: none; /*Nunca quiero que sea vea el checkbox*/
+}
+
+.menu-icon-action{
+    display: none;/*Para que no se le pueda hacer click*/
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #102d3a 25%, #131313 75%); /*fondo de color gradiente */
+    position: relative;  /*(Para que sea relativo al contenedor y nos permite usar top,bottom,left,right) */
+    display: grid; /* Esto es para que el hero se pueda dividir en dos columnas */
+    grid-template-columns: 1fr 1fr; /*las dos columnas*/
+    align-items: center; /*Para alinear verticalmente el hero*/
+    gap: 2rem; /*Haya espacio de 2 rem entre las dos columnas*/
+}
+
+section{
+    padding: 0 8%;
+
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1{
+    font-family: "Raleway", sans-serif;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img{
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 5s linear;   /* Esto hace que la transicion sea lineal */
+}
+
+.hero-img img:hover{
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block; 
+    background-color: #383838;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px sold white;
+    transform: translateX(8px);
+}
+
+.hero-text a.correo{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left:  20px;
+}
+
+.hero-text a.correo i{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+/* Aca vamos hacer mediaqueries para que la web sea responsive */
+
+@media (max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p{
+        font-size: 70%;
+    }
+
+
+    .icons{
+        display: none;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media(max-width:768px){
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu_icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img{
+        margin: 0;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #021719ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+
+    
+
+}
