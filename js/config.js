@@ -44,7 +44,7 @@ window.PORTFOLIO_CONFIG = {
         portafolio: {
             // Si activas GitHub Pages, sería:
             // "https://jairsstevenball.github.io/Proyecto-final-maquetaci-n-web/"
-            demo: "",
+            demo: "https://jairsstevenball.github.io/Proyecto-final-maquetaci-n-web/",
             repo: "https://github.com/Jairsstevenball/Proyecto-final-maquetaci-n-web"
         }
     },
