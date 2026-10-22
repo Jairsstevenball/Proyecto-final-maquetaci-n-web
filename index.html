@@ -1,86 +1,552 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Titulo de la pagina-->
-    <title>Jair SBA</title>
-    <!--Esta es la importacion de unestro archivo css-->
-    <link rel="stylesheet" href="style.css">
-    
-    <!--https://boxicons.com  iconos-->
 
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- SEO básico -->
+    <title>Jair Steven Ballesteros · JAIR SBA — Portafolio</title>
+    <meta name="description" content="Portafolio de Jair Steven Ballesteros Amaya (JAIR SBA), estudiante de Ingeniería de Software en la Universidad de Cundinamarca. Desarrollo web, aplicaciones móviles y diseño de interfaces.">
+    <meta name="author" content="Jair Steven Ballesteros Amaya">
+    <meta name="theme-color" content="#102d3a">
 
-    <!--https://remixicon.com iconos-->
+    <!-- Vista previa al compartir el enlace -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JAIR SBA — Portafolio de Jair Steven Ballesteros">
+    <meta property="og:description" content="Estudiante de Ingeniería de Software. Proyectos, tecnologías y contacto.">
+    <meta property="og:image" content="assets/Logo%20Jair%20%20(1).png">
 
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="assets/Logo%20Jair%20%20(1).png">
 
-
-    <!-- Type of the letter https://fonts.google.com/-->
+    <!-- Tipografías originales: Kode Mono (interfaz, etiquetas) + Raleway (títulos y lectura) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Raleway:ital,wght@0,300..800;1,400&display=swap" rel="stylesheet">
 
+    <!-- Iconos de interfaz: Remix Icon (ya usado en el proyecto original) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+    <!-- Logos de tecnologías: Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
 
+    <link rel="stylesheet" href="style.css">
+
+    <script>document.documentElement.classList.add("js");</script>
+
+    <!-- Datos personales y enlaces configurables (edita este archivo) -->
+    <script src="js/config.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <!-- Esta seccion es la cabezera de la pagina web la cual tendra logo, y barra de navegacion -->
-    <header>
-        <!-- Logo -->
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-        <a href="#" class="logo">JAIR SBA </a>
+    <!-- ============ CABECERA ============ -->
+    <header class="header" id="header">
+        <a href="#inicio" class="logo" aria-label="JAIR SBA, ir al inicio">
+            <img src="assets/Logo%20Jair%20%20(1).png" alt="" width="34" height="34">
+            <span>JAIR SBA</span>
+        </a>
 
-        <!-- Truco para que el boton sea clickeable sin usar JAVASCRIPT -->
-        <input type="checkbox" name="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon-action">
-            <div class='bx bx-menu'id="menu_icon"></div>
-        </label>
-        
+        <nav class="nav" aria-label="Navegación principal">
+            <button class="menu-toggle" id="menu-toggle" type="button"
+                    aria-controls="navlist" aria-expanded="false" aria-label="Abrir menú">
+                <i class="ri-menu-line" aria-hidden="true"></i>
+            </button>
 
-        <ul class="navlist">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portafolio</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-
+            <ul class="navlist" id="navlist">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#formacion">Formación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li class="navlist-cv">
+                    <a class="btn btn-outline btn-sm" data-link="cv" download hidden>
+                        <i class="ri-download-2-line" aria-hidden="true"></i> Hoja de vida
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
-        <!-- HERO SECTION -->
 
-        <section class="hero">
+    <main id="contenido">
+
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="inicio" aria-labelledby="hero-title">
+            <div class="hero-grid" aria-hidden="true"></div>
+
             <div class="hero-text">
-                <h5>Web designer</h5>
-                <h4>Software engineering student</h4>
-                <h1>Jair Sba</h1>
-                <P>Web designer and software engineering student with knowledge of HTML, CSS and 
-                    programming languages such as javascript, java and python.
-                </P>
-                <a href="#">CV</a>
-                <a href="#" class="correo"><i class="ri-mail-line"></i> My work email</a>
+                <p class="eyebrow">Ingeniería de Software · Desarrollo web</p>
+                <h1 id="hero-title">
+                    <span class="hero-hello">Hola, soy <strong>Jair Steven</strong>.</span>
+                    Creo soluciones digitales con código, creatividad y propósito.
+                </h1>
+                <p class="hero-desc">
+                    Soy estudiante de Ingeniería de Software en la Universidad de Cundinamarca y desarrollador en formación.
+                    Me gusta crear aplicaciones, diseñar experiencias digitales y llevar
+                    ideas hasta proyectos que funcionan. Aquí comparto lo que he aprendido
+                    y los proyectos que marcan mi evolución.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn btn-primary">
+                        Explorar mis proyectos <i class="ri-arrow-right-line" aria-hidden="true"></i>
+                    </a>
+                    <a href="#sobre-mi" class="btn btn-outline">Conocer más sobre mí</a>
+                    <a class="btn btn-ghost" data-link="cv" download hidden>
+                        <i class="ri-download-2-line" aria-hidden="true"></i> Descargar CV
+                    </a>
+                </div>
             </div>
 
-           
-           
-            <div class="hero-img">
-                <img src="/assets/Logo Jair  (1).png" alt="Jair sba foto">
+            <div class="hero-visual">
+                <div class="orbit orbit-1" aria-hidden="true"></div>
+                <div class="orbit orbit-2" aria-hidden="true"></div>
+                <img class="hero-logo" src="assets/Logo%20Jair%20%20(1).png"
+                     alt="Logotipo de JAIR SBA: una letra J atravesada por una línea diagonal"
+                     width="320" height="320">
+
+                <figure class="code-card" aria-hidden="true">
+                    <div class="code-card-bar"><span></span><span></span><span></span><em>jair.js</em></div>
+<pre><code><span class="tk-k">const</span> jair = {
+  rol: <span class="tk-s">"Ing. de Software"</span>,
+  enfoque: [<span class="tk-s">"web"</span>, <span class="tk-s">"móvil"</span>, <span class="tk-s">"UI"</span>],
+  proceso: <span class="tk-s">"ideas → código"</span>,
+};</code></pre>
+                </figure>
             </div>
-            
+
+            <!-- Barra lateral de redes (del diseño original) -->
+            <ul class="social-rail" aria-label="Redes">
+                <li><a href="https://github.com/Jairsstevenball" target="_blank" rel="noopener" aria-label="GitHub (se abre en otra pestaña)"><i class="ri-github-fill" aria-hidden="true"></i></a></li>
+                <li><a data-link="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn (se abre en otra pestaña)" hidden><i class="ri-linkedin-fill" aria-hidden="true"></i></a></li>
+                <li><a data-link="email" aria-label="Enviar correo" hidden><i class="ri-mail-line" aria-hidden="true"></i></a></li>
+            </ul>
+
+            <a href="#sobre-mi" class="scroll-down" aria-label="Bajar a la sección Sobre mí">
+                <i class="ri-arrow-down-line" aria-hidden="true"></i>
+            </a>
         </section>
 
-            <div class="icons">
-                <a href="#"><i class="ri-instagram-line"></i></a>
-                <a href="#"><i class="ri-github-fill"></i></a>
-                <a href="#"><i class="ri-twitter-x-fill"></i></a>
+        <!-- ============ SOBRE MÍ ============ -->
+        <section class="section" id="sobre-mi" aria-labelledby="sobre-title">
+            <header class="section-head reveal">
+                <p class="section-index"><span>01</span> sobre_mí</p>
+                <h2 id="sobre-title">Aprendo construyendo.</h2>
+            </header>
 
+            <div class="about">
+                <div class="about-text reveal">
+                    <p>
+                        Estudio <strong>Ingeniería de Software en la Universidad de Cundinamarca</strong>.
+                        Lo que más me engancha de la carrera es el momento en que una idea deja de estar
+                        en papel y empieza a funcionar en una pantalla.
+                    </p>
+                    <p>
+                        Me interesan dos cosas que van de la mano: el <strong>desarrollo de software</strong>
+                        y el <strong>diseño de interfaces</strong>. No me basta con que algo funcione; quiero
+                        que sea claro y cómodo de usar.
+                    </p>
+                    <p>
+                        He trabajado en proyectos académicos y personales, desde la maquetación de este
+                        sitio hasta aplicaciones móviles y propuestas que usan inteligencia artificial
+                        para problemas reales, como la gestión de cultivos.
+                    </p>
+                    <p>
+                        Mi meta es seguir creciendo como desarrollador, sumarme a equipos donde pueda
+                        aportar y aprender, y construir soluciones que respondan a necesidades concretas.
+                    </p>
+                </div>
+
+                <aside class="about-card reveal" aria-label="Mi proceso de trabajo">
+                    <img src="assets/Logo%20Jair%20%20(1).png" alt="" width="72" height="72" loading="lazy">
+                    <p class="about-card-title">Mi proceso</p>
+                    <ol class="flow">
+                        <li><i class="ri-lightbulb-flash-line" aria-hidden="true"></i> Ideas</li>
+                        <li><i class="ri-palette-line" aria-hidden="true"></i> Diseño</li>
+                        <li><i class="ri-code-s-slash-line" aria-hidden="true"></i> Código</li>
+                        <li><i class="ri-focus-3-line" aria-hidden="true"></i> Soluciones</li>
+                    </ol>
+                    <dl class="about-facts">
+                        <div><dt>Universidad</dt><dd>Universidad de Cundinamarca</dd></div>
+                        <div><dt>Programa</dt><dd>Ingeniería de Software</dd></div>
+                        <div><dt>Intereses</dt><dd>Web · Móvil · Interfaces</dd></div>
+                        <div><dt>Idiomas</dt><dd>Español nativo · Inglés B2</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ============ TECNOLOGÍAS ============ -->
+        <section class="section section-alt" id="tecnologias" aria-labelledby="tec-title">
+            <header class="section-head reveal">
+                <p class="section-index"><span>02</span> tecnologías</p>
+                <h2 id="tec-title">Tecnologías y herramientas</h2>
+                <p class="section-lead">Lo que he usado en clase y en mis propios proyectos. Sin porcentajes: cada etiqueta dice en qué punto estoy con esa herramienta.</p>
+            </header>
+
+            <!-- Etiquetas disponibles: tag-applied («Aplicado en proyectos»),
+                 tag-practical («Conocimientos prácticos»), tag-learning («En formación») -->
+            <div class="tech-grid">
+                <article class="tech-card reveal">
+                    <h3><i class="ri-layout-masonry-line" aria-hidden="true"></i> Desarrollo web</h3>
+                    <ul class="tech-list">
+                        <li><i class="devicon-html5-plain" aria-hidden="true"></i><span>HTML5</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-css3-plain" aria-hidden="true"></i><span>CSS3</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-javascript-plain" aria-hidden="true"></i><span>JavaScript</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-php-plain" aria-hidden="true"></i><span>PHP</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                    </ul>
+                </article>
+
+                <article class="tech-card reveal">
+                    <h3><i class="ri-terminal-box-line" aria-hidden="true"></i> Programación</h3>
+                    <ul class="tech-list">
+                        <li><i class="devicon-python-plain" aria-hidden="true"></i><span>Python</span><em class="tag tag-practical">Conocimientos prácticos</em></li>
+                        <li><i class="devicon-java-plain" aria-hidden="true"></i><span>Java</span><em class="tag tag-practical">Conocimientos prácticos</em></li>
+                        <li><i class="devicon-typescript-plain" aria-hidden="true"></i><span>TypeScript</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-kotlin-plain" aria-hidden="true"></i><span>Kotlin</span><em class="tag tag-practical">Conocimientos prácticos</em></li>
+                    </ul>
+                </article>
+
+                <article class="tech-card reveal">
+                    <h3><i class="ri-smartphone-line" aria-hidden="true"></i> Desarrollo móvil</h3>
+                    <ul class="tech-list">
+                        <li><i class="devicon-react-original" aria-hidden="true"></i><span>React Native</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-expo-original" aria-hidden="true"></i><span>Expo</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-androidstudio-plain" aria-hidden="true"></i><span>Android Studio</span><em class="tag tag-practical">Conocimientos prácticos</em></li>
+                        <li><i class="devicon-jetpackcompose-plain" aria-hidden="true"></i><span>Jetpack Compose</span><em class="tag tag-practical">Conocimientos prácticos</em></li>
+                    </ul>
+                </article>
+
+                <article class="tech-card reveal">
+                    <h3><i class="ri-database-2-line" aria-hidden="true"></i> Datos y herramientas</h3>
+                    <ul class="tech-list">
+                        <li><i class="devicon-mysql-plain" aria-hidden="true"></i><span>SQL y MySQL</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-supabase-plain" aria-hidden="true"></i><span>Supabase</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-git-plain" aria-hidden="true"></i><span>Git y GitHub</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                        <li><i class="devicon-vscode-plain" aria-hidden="true"></i><span>Visual Studio Code</span><em class="tag tag-applied">Aplicado en proyectos</em></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ PROYECTOS ============ -->
+        <section class="section" id="proyectos" aria-labelledby="proy-title">
+            <header class="section-head reveal">
+                <p class="section-index"><span>03</span> proyectos</p>
+                <h2 id="proy-title">Proyectos destacados</h2>
+                <p class="section-lead">Cada uno indica su estado real: terminado, en desarrollo o prototipo.</p>
+            </header>
+
+            <div class="projects">
+
+                <!-- ——— Proyecto: LifeOS ——— -->
+                <article class="project reveal" aria-labelledby="p-lifeos">
+                    <div class="project-cover has-shot">
+                        <img src="assets/projects/lifeos-cover.webp" alt="Pantallas de LifeOS: inicio con resumen del día, gimnasio y estudios" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="badge">App móvil · Proyecto personal</span>
+                            <span class="status status-dev">En desarrollo</span>
+                        </div>
+                        <h3 id="p-lifeos">LifeOS</h3>
+                        <p>App personal de organización y productividad que reúne finanzas, estudios, gimnasio y hábitos en una sola plataforma, con un resumen diario de objetivos.</p>
+                        <ul class="features">
+                            <li><i class="ri-wallet-3-line" aria-hidden="true"></i> Finanzas: registro de gastos y facturas</li>
+                            <li><i class="ri-graduation-cap-line" aria-hidden="true"></i> Estudios: materias, tareas y calendario</li>
+                            <li><i class="ri-run-line" aria-hidden="true"></i> Gym: rutinas, ejercicios y estadísticas</li>
+                            <li><i class="ri-calendar-check-line" aria-hidden="true"></i> Hábitos con seguimiento de rachas</li>
+                        </ul>
+                        <ul class="chips" aria-label="Tecnologías">
+                            <li>React Native</li><li>Expo</li><li>TypeScript</li><li>Supabase</li>
+                        </ul>
+                        <div class="project-actions">
+                            <button class="btn btn-primary btn-sm" type="button" data-gallery="lifeos" hidden><i class="ri-image-line" aria-hidden="true"></i> Ver capturas</button>
+                            <a class="btn btn-outline btn-sm" data-link="projects.lifeos.demo" target="_blank" rel="noopener" hidden>Ver proyecto <i class="ri-arrow-right-up-line" aria-hidden="true"></i></a>
+                            <a class="btn btn-outline btn-sm" data-link="projects.lifeos.repo" target="_blank" rel="noopener" hidden><i class="ri-github-fill" aria-hidden="true"></i> Ver código</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ——— Proyecto: PediaMotion ——— -->
+                <article class="project reveal" aria-labelledby="p-pediamotion">
+                    <div class="project-cover has-shot">
+                        <img src="assets/projects/pediamotion-cover.webp" alt="Pantallas de PediaMotion: inicio de evaluaciones y reportes por factor psicomotor" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="badge">App móvil · Proyecto académico</span>
+                            <span class="status status-dev">En desarrollo</span>
+                        </div>
+                        <h3 id="p-pediamotion">PediaMotion</h3>
+                        <p>App para evaluar el desarrollo psicomotor de niños de 6 a 11 años en Soacha, basada en la Batería Psicomotora de Vítor da Fonseca.</p>
+                        <ul class="features">
+                            <li><i class="ri-user-add-line" aria-hidden="true"></i> Registro de niños y grupos</li>
+                            <li><i class="ri-run-line" aria-hidden="true"></i> Tonicidad, equilibrio, lateralidad, praxias y más</li>
+                            <li><i class="ri-bar-chart-2-line" aria-hidden="true"></i> Reportes por factor y por zona urbana o rural</li>
+                            <li><i class="ri-focus-3-line" aria-hidden="true"></i> Identifica el factor a priorizar</li>
+                        </ul>
+                        <ul class="chips" aria-label="Tecnologías">
+                            <li>React Native</li><li>Expo</li>
+                        </ul>
+                        <div class="project-actions">
+                            <button class="btn btn-primary btn-sm" type="button" data-gallery="pediamotion" hidden><i class="ri-image-line" aria-hidden="true"></i> Ver capturas</button>
+                            <a class="btn btn-outline btn-sm" data-link="projects.pediamotion.demo" target="_blank" rel="noopener" hidden>Ver proyecto <i class="ri-arrow-right-up-line" aria-hidden="true"></i></a>
+                            <a class="btn btn-outline btn-sm" data-link="projects.pediamotion.repo" target="_blank" rel="noopener" hidden><i class="ri-github-fill" aria-hidden="true"></i> Ver código</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ——— Proyecto: PROAGRO ——— -->
+                <article class="project reveal" aria-labelledby="p-proagro">
+                    <div class="project-cover has-shot">
+                        <img src="assets/projects/proagro-cover.webp" alt="Pantallas de PROAGRO: bienvenida, inicio con módulos y mercado de cosechas" width="1200" height="675" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="badge">AgroTech · Proyecto académico</span>
+                            <span class="status status-proto">Prototipo</span>
+                        </div>
+                        <h3 id="p-proagro">PROAGRO</h3>
+                        <p>Ecosistema AgroTech que apoya la gestión de cultivos con herramientas digitales e inteligencia artificial, y conecta a productores sin intermediarios.</p>
+                        <ul class="features">
+                            <li><i class="ri-robot-2-line" aria-hidden="true"></i> AgroBot: asesor agrícola</li>
+                            <li><i class="ri-plant-line" aria-hidden="true"></i> Gestión de cultivos, riego y clima</li>
+                            <li><i class="ri-bar-chart-2-line" aria-hidden="true"></i> Estadísticas de producción</li>
+                            <li><i class="ri-store-2-line" aria-hidden="true"></i> Mercado de cosechas e insumos</li>
+                        </ul>
+                        <ul class="chips" aria-label="Tecnologías y conceptos">
+                            <li>App móvil</li><li>Inteligencia artificial</li><li>AgroTech</li>
+                        </ul>
+                        <div class="project-actions">
+                            <button class="btn btn-primary btn-sm" type="button" data-gallery="proagro" hidden><i class="ri-image-line" aria-hidden="true"></i> Ver capturas</button>
+                            <a class="btn btn-outline btn-sm" data-link="projects.proagro.demo" target="_blank" rel="noopener" hidden>Ver proyecto <i class="ri-arrow-right-up-line" aria-hidden="true"></i></a>
+                            <a class="btn btn-outline btn-sm" data-link="projects.proagro.repo" target="_blank" rel="noopener" hidden><i class="ri-github-fill" aria-hidden="true"></i> Ver código</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ——— Proyecto: Portafolio web ——— -->
+                <article class="project reveal" aria-labelledby="p-portafolio">
+                    <div class="project-cover cover-portfolio">
+                        <img src="assets/Logo%20Jair%20%20(1).png" alt="" width="96" height="96" loading="lazy">
+                        <span class="cover-label" aria-hidden="true">JAIR SBA</span>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="badge">Web · Proyecto académico</span>
+                            <span class="status status-done">Terminado</span>
+                        </div>
+                        <h3 id="p-portafolio">Portafolio web JAIR SBA</h3>
+                        <p>Sitio personal creado como proyecto final del curso de maquetación web, para presentar mi perfil, explorar el diseño de interfaces y aplicar lo aprendido. Esta versión lo amplía a un portafolio completo.</p>
+                        <ul class="features">
+                            <li><i class="ri-layout-masonry-line" aria-hidden="true"></i> Maquetación con Grid y Flexbox</li>
+                            <li><i class="ri-smartphone-line" aria-hidden="true"></i> Diseño adaptable a móvil</li>
+                        </ul>
+                        <ul class="chips" aria-label="Tecnologías">
+                            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Remix Icon</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a class="btn btn-primary btn-sm" data-link="projects.portafolio.demo" target="_blank" rel="noopener" hidden>Ver proyecto <i class="ri-arrow-right-up-line" aria-hidden="true"></i></a>
+                            <a class="btn btn-outline btn-sm" href="https://github.com/Jairsstevenball/Proyecto-final-maquetaci-n-web" target="_blank" rel="noopener"><i class="ri-github-fill" aria-hidden="true"></i> Ver código</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!--
+                ——— PLANTILLA PARA UN NUEVO PROYECTO ———
+                Copia este bloque, cambia los textos y añade los enlaces en js/config.js
+                (projects.<clave>.demo / projects.<clave>.repo). Si un enlace queda vacío,
+                su botón no se muestra.
+                Estados: status-done (Terminado) · status-dev (En desarrollo) · status-proto (Prototipo)
+
+                <article class="project reveal" aria-labelledby="p-nuevo">
+                    <div class="project-cover">
+                        <img src="assets/projects/nuevo.webp" alt="Descripción de la captura" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="badge">Categoría</span>
+                            <span class="status status-dev">En desarrollo</span>
+                        </div>
+                        <h3 id="p-nuevo">Nombre del proyecto</h3>
+                        <p>Descripción breve.</p>
+                        <ul class="chips" aria-label="Tecnologías"><li>Tecnología</li></ul>
+                        <div class="project-actions">
+                            <a class="btn btn-primary btn-sm" data-link="projects.nuevo.demo" target="_blank" rel="noopener" hidden>Ver proyecto</a>
+                            <a class="btn btn-outline btn-sm" data-link="projects.nuevo.repo" target="_blank" rel="noopener" hidden>Ver código</a>
+                        </div>
+                    </div>
+                </article>
+                -->
+
+                <a class="project-more reveal" href="https://github.com/Jairsstevenball" target="_blank" rel="noopener">
+                    <i class="ri-add-line" aria-hidden="true"></i>
+                    <span>Más proyectos en camino</span>
+                    <small>Mientras tanto, mira mi GitHub <i class="ri-arrow-right-up-line" aria-hidden="true"></i></small>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============ FORMACIÓN ============ -->
+        <section class="section section-alt" id="formacion" aria-labelledby="form-title">
+            <header class="section-head reveal">
+                <p class="section-index"><span>04</span> formación</p>
+                <h2 id="form-title">Mi formación</h2>
+            </header>
+
+            <ol class="timeline">
+                <li class="timeline-item reveal">
+                    <span class="timeline-dot" aria-hidden="true"><i class="ri-graduation-cap-line"></i></span>
+                    <div class="timeline-card">
+                        <p class="timeline-when">En curso · sexto semestre</p>
+                        <h3>Ingeniería de Software</h3>
+                        <p class="timeline-where">Universidad de Cundinamarca</p>
+                        <p>Formación en programación, bases de datos, desarrollo de aplicaciones e ingeniería de software.</p>
+                    </div>
+                </li>
+                <li class="timeline-item reveal">
+                    <span class="timeline-dot" aria-hidden="true"><i class="ri-code-s-slash-line"></i></span>
+                    <div class="timeline-card">
+                        <p class="timeline-when">Proyecto de curso</p>
+                        <h3>Maquetación web</h3>
+                        <p class="timeline-where">Proyecto final: primera versión de este sitio</p>
+                        <p>HTML semántico, CSS, Grid, Flexbox y diseño adaptable a distintas pantallas.</p>
+                    </div>
+                </li>
+                <li class="timeline-item reveal">
+                    <span class="timeline-dot" aria-hidden="true"><i class="ri-book-open-line"></i></span>
+                    <div class="timeline-card">
+                        <p class="timeline-when">Permanente</p>
+                        <h3>Formación continua</h3>
+                        <p class="timeline-where">Proyectos prácticos y aprendizaje autónomo</p>
+                        <p>Aprendo nuevas herramientas aplicándolas en proyectos propios, como LifeOS, PediaMotion y PROAGRO.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <!-- Idiomas -->
+            <div class="languages reveal">
+                <h3 class="subhead"><i class="ri-translate-2" aria-hidden="true"></i> Idiomas</h3>
+                <ul class="lang-grid">
+                    <li class="lang-card">
+                        <span class="lang-code" aria-hidden="true">ES</span>
+                        <div>
+                            <p class="lang-name">Español</p>
+                            <p class="lang-level">Lengua nativa</p>
+                        </div>
+                    </li>
+                    <li class="lang-card">
+                        <span class="lang-code" aria-hidden="true">EN</span>
+                        <div>
+                            <p class="lang-name">Inglés <span class="lang-badge">B2</span></p>
+                            <p class="lang-level">Certificado · American School Way</p>
+                            <a class="lang-link" data-link="certificates.english" target="_blank" rel="noopener" hidden>
+                                Ver certificado <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
-        <div class="scroll-down">
-            <a href="#"><i class="ri-arrow-down-circle-line"></i></a>
-        </div>
+            <!-- Formación complementaria -->
+            <div class="languages reveal">
+                <h3 class="subhead"><i class="ri-award-line" aria-hidden="true"></i> Formación complementaria</h3>
+                <ul class="course-list">
+                    <li><strong>Desarrollador web</strong><span>Digital House</span></li>
+                    <li><strong>Bases de datos</strong><span>Digital House</span></li>
+                    <li><strong>DevOps</strong><span>Digital House · en curso</span></li>
+                    <li><strong>Controles y seguridad informática</strong><span>SENA</span></li>
+                    <li><strong>Habilidades digitales para la gestión de la información</strong><span>SENA</span></li>
+                </ul>
+            </div>
+        </section>
 
+        <!-- ============ ENFOQUE PROFESIONAL ============ -->
+        <section class="section" id="enfoque" aria-labelledby="enf-title">
+            <header class="section-head reveal">
+                <p class="section-index"><span>05</span> enfoque</p>
+                <h2 id="enf-title">Cómo trabajo</h2>
+                <p class="section-lead">Más allá de las tecnologías, esto es lo que intento aportar en cada proyecto.</p>
+            </header>
+
+            <div class="focus-grid">
+                <article class="focus-card reveal">
+                    <span class="focus-num" aria-hidden="true">01</span>
+                    <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+                    <h3>Desarrollo de software</h3>
+                    <p>Convertir ideas y necesidades en soluciones que funcionan, escritas con código ordenado y fácil de mantener.</p>
+                </article>
+                <article class="focus-card reveal">
+                    <span class="focus-num" aria-hidden="true">02</span>
+                    <i class="ri-palette-line" aria-hidden="true"></i>
+                    <h3>Diseño de interfaces</h3>
+                    <p>Construir experiencias visuales claras y organizadas, pensadas para que cualquier persona las use sin esfuerzo.</p>
+                </article>
+                <article class="focus-card reveal">
+                    <span class="focus-num" aria-hidden="true">03</span>
+                    <i class="ri-flask-line" aria-hidden="true"></i>
+                    <h3>Aprendizaje e innovación</h3>
+                    <p>Probar herramientas y tecnologías nuevas para mejorar cada proyecto un poco más que el anterior.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ CONTACTO ============ -->
+        <section class="section contact" id="contacto" aria-labelledby="cont-title">
+            <div class="contact-inner reveal">
+                <p class="section-index"><span>06</span> contacto</p>
+                <h2 id="cont-title">¿Construimos algo interesante?</h2>
+                <p class="section-lead">Quiero seguir aprendiendo, colaborar en proyectos tecnológicos y encontrar oportunidades donde pueda aportar lo que sé y seguir creciendo.</p>
+
+                <ul class="contact-links">
+                    <li><a class="contact-link" data-link="email" hidden>
+                        <i class="ri-mail-send-line" aria-hidden="true"></i>
+                        <span><strong>Correo</strong><small data-text="email"></small></span>
+                    </a></li>
+                    <li><a class="contact-link" href="https://github.com/Jairsstevenball" target="_blank" rel="noopener">
+                        <i class="ri-github-fill" aria-hidden="true"></i>
+                        <span><strong>GitHub</strong><small>@Jairsstevenball</small></span>
+                    </a></li>
+                    <li><a class="contact-link" data-link="linkedin" target="_blank" rel="noopener" hidden>
+                        <i class="ri-linkedin-fill" aria-hidden="true"></i>
+                        <span><strong>LinkedIn</strong><small>Perfil profesional</small></span>
+                    </a></li>
+                    <li><a class="contact-link" data-link="cv" download hidden>
+                        <i class="ri-download-2-line" aria-hidden="true"></i>
+                        <span><strong>Hoja de vida</strong><small>Descargar PDF</small></span>
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Visor de capturas (lo controla js/main.js) -->
+    <dialog class="gallery" id="gallery" aria-labelledby="gallery-title">
+        <div class="gallery-head">
+            <h2 id="gallery-title">Capturas</h2>
+            <button class="gallery-close" type="button" aria-label="Cerrar capturas"><i class="ri-close-line" aria-hidden="true"></i></button>
+        </div>
+        <ul class="gallery-track" id="gallery-track"></ul>
+        <p class="gallery-note">Capturas reales de la app. Los datos personales de terceros se ocultaron.</p>
+    </dialog>
+
+    <!-- ============ PIE DE PÁGINA ============ -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <a href="#inicio" class="logo"><img src="assets/Logo%20Jair%20%20(1).png" alt="" width="28" height="28" loading="lazy"><span>JAIR SBA</span></a>
+            <p>Código con intención, diseño con propósito.</p>
+        </div>
+        <nav aria-label="Enlaces del pie de página">
+            <ul class="footer-links">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://github.com/Jairsstevenball" target="_blank" rel="noopener"><i class="ri-github-fill" aria-hidden="true"></i> GitHub</a></li>
+            </ul>
+        </nav>
+        <p class="footer-copy">© <span id="year">2026</span> Jair Steven Ballesteros Amaya</p>
+    </footer>
 </body>
 </html>
